@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Message Board</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="title"> <%= title%></div>
+    <div class="parent-content">
+        <% messages.forEach((message, idx) => { %>
+            <div class="content">
+                <div> <%= message.username %></div>
+                <div> <%= message.message %></div>
+                <div> <%= message.date %></div>
+                <a class="view-link" href="/message/<%= idx+1 %>">View</a>
+            </div>
+        <% }); %>
+    </div>
+    <div class="format">
+        <a class="button-link" href="/new">New Message</a>
+    </div>
+</body>
+</html>
